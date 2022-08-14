@@ -23,7 +23,8 @@ def get_current_play():
     np = nowplaying["item"]
     title = np["name"]
     popular = np["popularity"]
-    listss = {'title':title, 'popular':popular}
+    timeplay = nowplaying["timestamp"]
+    listss = {'title':title, 'popular':popular, 'timeplay':timeplay}
     tracks.append(listss)
     producer.send('week6_demo', value=tracks)
     producer.flush()
